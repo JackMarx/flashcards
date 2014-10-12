@@ -1,15 +1,14 @@
-post '/login' do 
+post '/login' do
 	user = User.find_by_email(params[:user][:email])
-
 	if user && user.authenticate(params[:user][:password])
-		session[:user_id] = user.id 
-		redirect '/profile'
+		session[:user_id] = user.id
+		redirect '/decks'
 	else
 		redirect '/'
 	end
 end
 
-get '/logout' do 
+get '/logout' do
 	session.clear
 	redirect '/'
 end

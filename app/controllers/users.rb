@@ -5,11 +5,12 @@ get '/users/new' do
 		redirect '/'
 	end
 	@user = User.new
+	@round = Round.new
 
 	erb :"users/new"
 end
 
-post '/users/new' do 
+post '/users/new' do
 	@user = User.new(params[:user])
 
 	if !@user.save
@@ -20,9 +21,9 @@ post '/users/new' do
 	redirect to '/'
 end
 
-get '/users/:id' do 
+get '/users/:id' do
 	@user = User.find_by_id(session[:user_id])
-
+	@round = Round.new
 	erb :"users/show"
 end
 
