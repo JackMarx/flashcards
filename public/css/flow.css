@@ -20,6 +20,17 @@ header{
 
 }
 
+#su_box{
+  margin-left: 550px;
+  margin-top: 300px;
+  padding-left: 65px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 10px;
+  background-color: #2980b9;
+  width: 450px;
+}
+
 #login{
   margin-left: 50px;
   margin-right: 50px;
@@ -34,9 +45,16 @@ header{
   height: 5%;
   border-radius: 5px;
   margin-right: 50%
-
 }
 
+#email{
+    width: 86%;
+  height: 5%;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 10p
+
+}
 #password{
   width: 86%;
   height: 5%;

@@ -1,0 +1,7 @@
+.deck{
+  width: 350px;
+  height: 200px;
+  border: solid;
+  float: right;
+  margin: 15px;
+}
