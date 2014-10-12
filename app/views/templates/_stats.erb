@@ -2,30 +2,24 @@
 <div class="statsBar">
   <a href="#close">X</a>
   <div class="header">
-    <h2>The Stats</h3>
-    <p>You've Played: <scan>31</scan> Rounds</p>
-    <p>You've Completed: <scan>14</scan> Rounds</p>
-  </div>
-  <div class="toStudy">
-    <h3 class="title">Study</h3>
-    <p class="deckTitle">Deck Title</p>
-    <p><scan>25</scan>/<scan>56</scan> Correct Guesses</p>
-    <hr>
-    <p class="deckTitle">Deck Title</p>
-    <p><scan>25</scan>/<scan>56</scan> Correct Guesses</p>
-    <hr>
-    <p class="deckTitle">Deck Title</p>
-    <p><scan>25</scan>/<scan>56</scan> Correct Guesses</p>
-  </div>
-  <div class="youKnow">
-    <h3 class="title">Remember</h3>
-    <p class="deckTitle">Deck Title</p>
-    <p><scan>25</scan>/<scan>56</scan> Correct Guesses</p>
-    <hr>
-    <p class="deckTitle">Deck Title</p>
-    <p><scan>25</scan>/<scan>56</scan> Correct Guesses</p>
-    <hr>
-    <p class="deckTitle">Deck Title</p>
-    <p><scan>25</scan>/<scan>56</scan> Correct Guesses</p>
+    <h2>The Naked Truth</h3>
+    <p>Username: <%= current_user.name %></p>
+    <% if current_user.rounds != nil %>
+      <p>You've Played: <scan><%= current_user.rounds.count %></scan> Rounds</p>
+      <% if current_user.rounds.where(finished: true) != nil %>
+        <p>You've Finished: <scan><%= current_user.rounds.where(finished: true).count %></scan> Rounds</p>
+      <% end %>
+      <div class="toStudy">
+        <% current_user.rounds.each do |round| %>
+        <!-- <h3 class="title">Study</h3> -->
+          <p class="deckTitle"><%= round.deck.title %></p>
+          <p><scan><%= round.correct_guesses %></scan>/<scan><%= round.deck.cards.count%></scan> Correct Guesses</p>
+          <hr>
+        <% end %>
+      </div>
+    <% else %>
+      <p>You've Played: 0 Rounds</p>
+      <a href="/decks">Play Now</a>
+    <% end %>
   </div>
 </div>
