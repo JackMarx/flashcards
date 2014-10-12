@@ -15,18 +15,22 @@
   border: solid;
   border-color: lightgray;
   font-family: Helvetica;
-  padding: 10px;
+  padding: 30px;
   margin-top: 15px;
   margin-bottom: 15px;
+  width: 500px;
+  height: 300px;
 }
 
 #answer{
-  width: 100%;
+  width: 566px;
   height: 40px;
   padding-bottom: 15px;
 }
 
 #button_row{
+width: 566px;
+margin-left: 75px;
 
 }
 
