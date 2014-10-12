@@ -1,0 +1,23 @@
+body {
+  width:100%;
+  font-family: helvetica, sans-serif;
+  margin-top: -20px;
+}
+
+.main-container{
+  width:100%;
+  position:relative;
+}
+
+.container {
+  margin: 20px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+}
+
+th {
+  text-align: left;
+}
+
+
