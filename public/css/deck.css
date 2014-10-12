@@ -1,7 +1,24 @@
+#container{
+margin-top: 150px;
+margin-left: 200px;
+}
+
+#upper{
+  width: 800px;
+  margin-left: 300px;
+}
+
+#lower{
+  width: 1200px;
+  margin-left: 100px;
+
+}
+
 .deck{
   width: 350px;
   height: 200px;
   border: solid;
   float: right;
   margin: 15px;
+  background-color: #2980b9;
 }
