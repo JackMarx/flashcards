@@ -1,0 +1,58 @@
+#container{
+  float: left;
+  width: 400px;
+  margin-left: 45%;
+  margin-top: 250px;
+}
+
+#score{
+  font-size: 25px;
+  font-family: Helvetica;
+  text-align: center;
+}
+
+#description{
+  border: solid;
+  border-color: lightgray;
+  font-family: Helvetica;
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#answer{
+  width: 100%;
+  height: 40px;
+  padding-bottom: 15px;
+}
+
+#button_row{
+
+}
+
+.button{
+   margin-right: 1%;
+   width: 126px;
+   /*margin-left: auto;*/
+   border-top: 1px solid #96d1f8;
+   background: #65c5d6;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e9c45), to(#65c5d6));
+   background: -webkit-linear-gradient(top, #3e9c45, #65c5d6);
+   background: -moz-linear-gradient(top, #3e9c45, #65c5d6);
+   background: -ms-linear-gradient(top, #3e9c45, #65c5d6);
+   background: -o-linear-gradient(top, #3e9c45, #65c5d6);
+   padding: 9px 18px;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 13px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+}
+
