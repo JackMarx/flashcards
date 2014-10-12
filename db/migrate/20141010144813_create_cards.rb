@@ -5,7 +5,7 @@ class CreateCards < ActiveRecord::Migration
   		t.string :hint
   		t.string :answer
   		t.string :link
-  		t.string :attributes
+  		t.string :year
   		t.string :image_url
 
   		t.timestamps

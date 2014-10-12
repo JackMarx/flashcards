@@ -12,8 +12,8 @@
       <div class="toStudy">
         <% current_user.rounds.each do |round| %>
         <!-- <h3 class="title">Study</h3> -->
-          <p class="deckTitle"><%= round.deck.title %></p>
-          <p><scan><%= round.correct_guesses %></scan>/<scan><%= round.deck.cards.count%></scan> Correct Guesses</p>
+          <p class="deckTitle"><%= round.deck.name %></p>
+          <p><scan><%= round.correct_guesses %></scan>/<scan><%= round.cards.count%></scan> Correct Guesses</p>
           <hr>
         <% end %>
       </div>

@@ -6,7 +6,6 @@ get '/users/new' do
 	end
 	@user = User.new
 	@round = Round.new
-
 	erb :"users/new"
 end
 

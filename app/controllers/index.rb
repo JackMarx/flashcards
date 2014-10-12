@@ -1,6 +1,6 @@
 get '/' do
-	# if logged_in?
-	# 	redirect '/profile' # Could change
-	# end
+	if logged_in?
+	 redirect '/decks' # Could change
+	end
   erb :index
 end
