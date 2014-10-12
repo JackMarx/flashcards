@@ -67,3 +67,9 @@ imdb_info = [{:title=>"12 Years a Slave", :title_url=>"http://www.imdb.com/title
 {:title=>"All the King's Men", :title_url=>"http://www.imdb.com/title/tt0041113/", :year=>"1949", :outline=>"The rise and fall of a corrupt politician, who makes his friends richer and retains power by dint of a populist appeal.", :picture_url=>"http://ia.media-imdb.com/images/M/MV5BMTU0OTcyNDk0OV5BMl5BanBnXkFtZTcwMTY1Mjk3OA@@._V1._SX54_CR0,0,54,74_.jpg", :better_image=>"http://ia.media-imdb.com/images/M/MV5BMTU0OTcyNDk0OV5BMl5BanBnXkFtZTcwMTY1Mjk3OA@@._V1_SX214_AL_.jpg"},
 {:title=>"Hamlet", :title_url=>"http://www.imdb.com/title/tt0040416/", :year=>"1948", :outline=>"Prince Hamlet struggles over whether or not he should kill his uncle, whom he suspects has murdered his father, the former king.", :picture_url=>"http://ia.media-imdb.com/images/M/MV5BMjEwNzQzNDM2NV5BMl5BanBnXkFtZTYwOTg4ODI5._V1._SX54_CR0,0,54,74_.jpg", :better_image=>"http://ia.media-imdb.com/images/M/MV5BMjEwNzQzNDM2NV5BMl5BanBnXkFtZTYwOTg4ODI5._V1_SY317_CR5,0,214,317_AL_.jpg"},
 {:title=>"Gentleman's Agreement", :title_url=>"http://www.imdb.com/title/tt0039416/", :year=>"1947", :outline=>"A reporter pretends to be Jewish in order to cover a story on anti-Semitism, and personally discovers the true depths of bigotry and hatred.", :picture_url=>"http://ia.media-imdb.com/images/M/MV5BMjEwMDM1NTIyMF5BMl5BanBnXkFtZTYwMDE2MjE5._V1._SX54_CR0,0,54,74_.jpg", :better_image=>"http://ia.media-imdb.com/images/M/MV5BMjEwMDM1NTIyMF5BMl5BanBnXkFtZTYwMDE2MjE5._V1_SY317_CR5,0,214,317_AL_.jpg"}]
+
+imdb_deck = Deck.new(name: "IMDB")
+
+imdb_info.each do |e|
+  Card.create(deck_id: imdb_deck[:id],answer: :title, link: :title_url, hint: :outline, attributes: :year, image_url: :better_image)
+end
