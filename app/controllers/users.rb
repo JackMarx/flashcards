@@ -1,9 +1,6 @@
 ##### Create New User #####
 
 get '/users/new' do
-	if logged_in?
-		redirect '/'
-	end
 	@user = User.new
 	@round = Round.new
 	erb :"users/new"

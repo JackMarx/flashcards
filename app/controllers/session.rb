@@ -9,10 +9,14 @@ post '/login' do
 end
 
 get '/logout' do
-  session.delete(deck_id)
-  session.delette(round_id)
-  session.delete(deck)
-  session.delete(user_id)
-  session.save
+  session.delete(:deck_id)
+  session.delete(:round)
+  session.delete(:round_id)
+  session.delete(:deck)
+  session.delete(:user_id)
   redirect '/'
+end
+
+get '/session-viewer' do
+  session.inspect
 end

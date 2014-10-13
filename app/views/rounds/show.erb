@@ -12,12 +12,14 @@
         <div id="button_row">
           <a href="<%= @card.link %>" target="_blank">Cheat</a>
           <form action="/round/:round_id" method="post">
-            <input class="text" type="button" name="answer">
+            <input class="text" type="text" name="answer">
             <input type="submit" class="button" name="submit" value="Answer">
           </form>
           <a href="#nextCard">Skip</a>
           <div id="answerSide">
-            <p><%= @card.answer %></p>
+            <% if @message %>
+              <p><%= message %>
+            <% end %>
           </div>
         </div>
       </div>
