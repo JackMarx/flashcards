@@ -9,6 +9,10 @@ post '/login' do
 end
 
 get '/logout' do
-	session.clear
-	redirect '/'
+  session.delete(deck_id)
+  session.delette(round_id)
+  session.delete(deck)
+  session.delete(user_id)
+  session.save
+  redirect '/'
 end

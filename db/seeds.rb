@@ -1,6 +1,6 @@
 
 
-imdb_info = [{:title=>"12 Years a Slave", :title_url=>"http://www.imdb.com/title/tt2024544/", :year=>"2013", :outline=>"In the antebellum United States, Solomon Northup, a free black man from upstate New York, is abducted and sold into slavery.", :picture_url=>"http://ia.media-imdb.com/images/M/MV5BMjExMTEzODkyN15BMl5BanBnXkFtZTcwNTU4NTc4OQ@@._V1._SX54_CR0,0,54,74_.jpg", :better_image=>"http://ia.media-imdb.com/images/M/MV5BMjExMTEzODkyN15BMl5BanBnXkFtZTcwNTU4NTc4OQ@@._V1_SX214_AL_.jpg"},
+winners_info = [{:title=>"12 Years a Slave", :title_url=>"http://www.imdb.com/title/tt2024544/", :year=>"2013", :outline=>"In the antebellum United States, Solomon Northup, a free black man from upstate New York, is abducted and sold into slavery.", :picture_url=>"http://ia.media-imdb.com/images/M/MV5BMjExMTEzODkyN15BMl5BanBnXkFtZTcwNTU4NTc4OQ@@._V1._SX54_CR0,0,54,74_.jpg", :better_image=>"http://ia.media-imdb.com/images/M/MV5BMjExMTEzODkyN15BMl5BanBnXkFtZTcwNTU4NTc4OQ@@._V1_SX214_AL_.jpg"},
        {:title=>"Argo", :title_url=>"http://www.imdb.com/title/tt1024648/", :year=>"2012", :outline=>"Acting under the cover of a Hollywood producer scouting a location for a science fiction film, a CIA agent launches a dangerous operation to rescue six Americans in Tehran during the U.S. hostage crisis in Iran in 1980.", :picture_url=>"http://ia.media-imdb.com/images/M/MV5BMTc3MjI0MjM0NF5BMl5BanBnXkFtZTcwMTYxMTQ1OA@@._V1._SX54_CR0,0,54,74_.jpg", :better_image=>"http://ia.media-imdb.com/images/M/MV5BMTc3MjI0MjM0NF5BMl5BanBnXkFtZTcwMTYxMTQ1OA@@._V1_SY317_CR0,0,214,317_AL_.jpg"},
        {:title=>"The Artist", :title_url=>"http://www.imdb.com/title/tt1655442/", :year=>"2011", :outline=>"A silent movie star meets a young dancer, but the arrival of talking pictures sends their careers in opposite directions.", :picture_url=>"http://ia.media-imdb.com/images/M/MV5BMzk0NzQxMTM0OV5BMl5BanBnXkFtZTcwMzU4MDYyNQ@@._V1._SY74_CR1,0,54,74_.jpg", :better_image=>"http://ia.media-imdb.com/images/M/MV5BMzk0NzQxMTM0OV5BMl5BanBnXkFtZTcwMzU4MDYyNQ@@._V1_SY317_CR12,0,214,317_AL_.jpg"},
        {:title=>"The King's Speech", :title_url=>"http://www.imdb.com/title/tt1504320/", :year=>"2010", :outline=>"The story of King George VI of the United Kingdom of Great Britain and Northern Ireland, his impromptu ascension to the throne and the speech therapist who helped the unsure monarch become worthy of it.", :picture_url=>"http://ia.media-imdb.com/images/M/MV5BMzU5MjEwMTg2Nl5BMl5BanBnXkFtZTcwNzM3MTYxNA@@._V1._SX54_CR0,0,54,74_.jpg", :better_image=>"http://ia.media-imdb.com/images/M/MV5BMzU5MjEwMTg2Nl5BMl5BanBnXkFtZTcwNzM3MTYxNA@@._V1_SY317_CR1,0,214,317_AL_.jpg"},
@@ -68,10 +68,10 @@ imdb_info = [{:title=>"12 Years a Slave", :title_url=>"http://www.imdb.com/title
        {:title=>"Hamlet", :title_url=>"http://www.imdb.com/title/tt0040416/", :year=>"1948", :outline=>"Prince Hamlet struggles over whether or not he should kill his uncle, whom he suspects has murdered his father, the former king.", :picture_url=>"http://ia.media-imdb.com/images/M/MV5BMjEwNzQzNDM2NV5BMl5BanBnXkFtZTYwOTg4ODI5._V1._SX54_CR0,0,54,74_.jpg", :better_image=>"http://ia.media-imdb.com/images/M/MV5BMjEwNzQzNDM2NV5BMl5BanBnXkFtZTYwOTg4ODI5._V1_SY317_CR5,0,214,317_AL_.jpg"},
        {:title=>"Gentleman's Agreement", :title_url=>"http://www.imdb.com/title/tt0039416/", :year=>"1947", :outline=>"A reporter pretends to be Jewish in order to cover a story on anti-Semitism, and personally discovers the true depths of bigotry and hatred.", :picture_url=>"http://ia.media-imdb.com/images/M/MV5BMjEwMDM1NTIyMF5BMl5BanBnXkFtZTYwMDE2MjE5._V1._SX54_CR0,0,54,74_.jpg", :better_image=>"http://ia.media-imdb.com/images/M/MV5BMjEwMDM1NTIyMF5BMl5BanBnXkFtZTYwMDE2MjE5._V1_SY317_CR5,0,214,317_AL_.jpg"}]
 
-winners_deck = Deck.new(name: "Oscar Winners for Best Picture")
+winners_deck = Deck.create!(name: "Oscar Winners for Best Picture")
 
 winners_info.each do |e|
-  Card.create(deck_id: winners_deck[:id],answer: e.title, link: e.title_url, hint: e.outline, year: e.year, image_url: e.better_image)
+  Card.create(deck_id: winners_deck[:id],answer: e[:title], link: e[:title_url], hint: e[:outline], year: e[:year], image_url: e[:better_image])
 end
 
 worst_info = [{:title=>"Love Story 2050", :title_url=>"http://www.imdb.com/title/tt0490170/?ref_=chtbtm_tt_100", :year=>"2008", :better_image=>"http://www.crashonline.com/wp-content/uploads/2014/09/o-WATCHING-MOVIES-facebook.jpg", :outline=>"With the help of his uncle, a man travels to the future to try and bring his girlfriend back to life."},
@@ -175,10 +175,10 @@ worst_info = [{:title=>"Love Story 2050", :title_url=>"http://www.imdb.com/title
         {:title=>"Birdemic: Shock and Terror", :title_url=>"http://www.imdb.com/title/tt1316037/?ref_=chtbtm_tt_2", :year=>"2010", :better_image=>"http://ia.media-imdb.com/images/M/MV5BOTcxODAwMDYwNV5BMl5BanBnXkFtZTcwNzQ3MjQzMg@@._V1_SX214_AL_.jpg", :outline=>"A platoon of eagles and vultures attacks the residents of a small town. Many people die. It's not known what caused the flying menace to attack. Two people manage to fight back, but will they survive Birdemic?"},
         {:title=>"Gunday", :title_url=>"http://www.imdb.com/title/tt2574698/?ref_=chtbtm_tt_1", :year=>"2014", :better_image=>"http://ia.media-imdb.com/images/M/MV5BMjI2NjEzNjc4NV5BMl5BanBnXkFtZTgwODQxOTc5MDE@._V1_SY317_CR15,0,214,317_AL_.jpg", :outline=>"Two childhood friends and their journey to becoming men and achieving their dream of being rulers of the town."}]
 
-worst_deck = Deck.new(name: "Worst 100 Movies")
+worst_deck = Deck.create!(name: "Worst 100 Movies")
 
 worst_info.each do |e|
-  Card.create(deck_id: worst_deck[:id],answer: e.title, link: e.title_url, hint: e.outline, year: e.year, image_url: e.better_image)
+  Card.create(deck_id: worst_deck[:id],answer: e[:title], link: e[:title_url], hint: e[:outline], year: e[:year], image_url: e[:better_image])
 end
 
 

@@ -2,7 +2,7 @@ class CreateCards < ActiveRecord::Migration
   def change
   	create_table :cards do |t|
   		t.integer :deck_id
-  		t.string :hint
+  		t.text :hint
   		t.string :answer
   		t.string :link
   		t.string :year
