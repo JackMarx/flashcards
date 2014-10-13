@@ -1,10 +1,12 @@
 <link rel="stylesheet" href="/css/header.css">
 
 <nav>
-  <div class="brand">In The Buff</div>
+  <h1 class="brand">In The Buff</h1>
   <ul class="navBar">
     <% if logged_in? %>
-      <li class="heading"><a href="#stats">View Stats</li>
+      <li>|</li>
+      <li class="viewStats heading">View Stats</li>
+      <li>|</li>
       <li class="heading"><a href="/logout">Logout</a></li>
     <% end %>
   </ul>

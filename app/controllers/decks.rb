@@ -35,12 +35,12 @@ end
 post '/round/:round_id' do
 	@round = Round.find(session[:round_id])
 	@card = Card.find(session[:card_id])
-	if params[:answer] == @card.answer
+	if params[:answer].downcase == @card.answer.downcase
 		 @round.correct_guesses = (@round.correct_guesses + 1)
 		 @round.save
+		 redirect '/round/' + session[:round_id].to_s
 	else
-		@message = "That's incorrect. The answer is <%=@card.answer %>"
+		redirect '/round/' + session[:round_id].to_s
 	end
 	session[:card_id] += 1
-	redirect '/round/' + session[:round_id].to_s
 end

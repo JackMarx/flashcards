@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/css/stats.css">
-<div class="statsBar">
-  <a href="#close">X</a>
+<div class="statsBar hide">
+  <div class="viewStats exit">X</div>
   <div class="header">
     <h2>The Naked Truth</h3>
     <p>Username: <%= current_user.name %></p>
@@ -9,12 +9,15 @@
       <% if current_user.rounds.where(finished: true) != nil %>
         <p>You've Finished: <scan><%= current_user.rounds.where(finished: true).count %></scan> Rounds</p>
       <% end %>
-      <div class="toStudy">
+      <div class="recentRounds">
+        <h2>Recent Rounds</h2>
         <% current_user.rounds.each do |round| %>
         <!-- <h3 class="title">Study</h3> -->
-          <p class="deckTitle"><%= round.deck.name %></p>
-          <p><scan><%= round.correct_guesses %></scan>/<scan><%= round.cards.count%></scan> Correct Guesses</p>
-          <hr>
+          <div class="round">
+            <p class="deckTitle"><%= round.deck.name %></p>
+            <p><scan><%= round.correct_guesses %></scan>/<scan><%= round.cards.count%></scan> Correct Guesses</p>
+            <hr>
+          </div>
         <% end %>
       </div>
     <% else %>

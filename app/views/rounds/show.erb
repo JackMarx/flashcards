@@ -1,28 +1,17 @@
 <link rel="stylesheet" type="text/css" href="/css/game.css">
-<div id="container">
-  <div id="score">
-    <p>Total Correct:<%= @round.correct_guesses %>/<%= @round.cards.count %></p>
-  </div>
 
+<div class="contentContainer">
+  <div id="score">
+    <h2>Total Correct: <%= @round.correct_guesses %>/<%= @round.cards.count %></h2>
+  </div>
   <div class="game">
-      <div class="questionSide">
-        <div id="question">
-          <p><%= @card.hint %></p>
-        </div>
-        <div id="button_row">
-          <a href="<%= @card.link %>" target="_blank">Cheat</a>
-          <form action="/round/:round_id" method="post">
-            <input class="text" type="text" name="answer">
-            <input type="submit" class="button" name="submit" value="Answer">
-          </form>
-          <a href="#nextCard">Skip</a>
-          <div id="answerSide">
-            <% if @message %>
-              <p><%= message %>
-            <% end %>
-          </div>
-        </div>
-      </div>
+    <div class="question">
+      <p><%= @card.hint %></p>
+    </div>
+    <form action="/round/:round_id" method="post">
+      <input id="answer" type="text" name="answer" placeholder="Answer">
+      <input type="submit" class="button" name="submit" value="Submit">
+    </form>
   </div>
 </div>
 

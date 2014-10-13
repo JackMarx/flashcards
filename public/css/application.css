@@ -1,7 +1,21 @@
+html {
+  background: url('/images/stardust.png') repeat;
+}
+
 body {
   width:100%;
-  font-family: helvetica, sans-serif;
+  font-family: 'Muli', sans-serif;
   margin-top: -20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Londrina Solid', cursive;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  font-size: 100px;
 }
 
 .main-container{
@@ -9,11 +23,9 @@ body {
   position:relative;
 }
 
-.container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+.contentContainer {
+  width:60%;
+  margin: 0 auto;
 }
 
 th {
@@ -21,3 +33,17 @@ th {
 }
 
 
+.hide {
+  display:none;
+}
+
+.show {
+  display: inline-block;
+}
+
+.exit {
+  float:right;
+  padding:5px 10px;
+  border: 1px solid white;
+  margin-right: -20px;
+}

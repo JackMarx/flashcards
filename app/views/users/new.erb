@@ -1,8 +1,15 @@
-<h1>New User</h1>
+<link rel="stylesheet" type="text/css" href="/css/form.css">
 
-<form action='/users/new' method='POST'>
-	<input type='text' name='user[name]' placeholder='Name'>
-	<input type='text' name='user[email]' placeholder='Email'>
-	<input type='password' name='user[password]' placeholder='Password'>
-	<input type='submit' value='Sign up'>
-</form> 
+<div class="contentContainer">
+
+  <h2>Sign Up</h2>
+  <div class="form">
+    <form action='/users/new' method='POST'>
+    	<input class="formInput" type='text' name='user[name]' placeholder='Name'>
+    	<input class="formInput" type='text' name='user[email]' placeholder='Email'>
+    	<input class="formInput" type='password' name='user[password]' placeholder='Password'>
+    	<input class="button" type='submit' value='Sign up'>
+    </form>
+  </div>
+
+</div>

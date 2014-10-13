@@ -4,7 +4,8 @@ post '/login' do
 		session[:user_id] = user.id
 		redirect '/decks'
 	else
-		redirect '/'
+    @message = "Whoops. You're missing something. Try again."
+		erb :index
 	end
 end
 
