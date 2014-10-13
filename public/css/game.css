@@ -4,9 +4,9 @@
 
 .question {
   width: 75%;
-  font-size: 36px;
+  font-size: 34px;
   color: white;
-  margin: -40px auto 30px auto;
+  margin: -60px auto 30px auto !important;
   line-height: 1.5;
 }
 

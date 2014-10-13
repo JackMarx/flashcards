@@ -1,18 +1,20 @@
-get '/rounds/:id' do 
-	@round = Round.find_by_id(params[:id])
-	user = @round.user
-
-	if !(logged_in? && current_user == user)
-		redirect to "/"
-	end
-
-	erb :"round/show"
+get '/rounds/:round_id' do
+	@user = User.find(session[:user_id])
+	@round = Round.find(session[:round_id])
+	@deck = Deck.find(session[:deck_id])
+	@cards = @round.cards
+	@card = Card.find(session[:card_id])
+	erb :"rounds/show"
 end
 
-post '/rounds/:id' do 
-	user = User.find_by_id(session[:user_id])
-	@round = Round.find_by_id(user.current_round)
-	@card = Card.find_by_id(params[:question_id])
 
-	erb :"rounds/show"
+post '/rounds/:round_id' do
+	@round = Round.find(session[:round_id])
+	@card = Card.find(session[:card_id])
+	if params[:answer].downcase == @card.answer.downcase
+		 @round.correct_guesses = (@round.correct_guesses + 1)
+		 @round.save
+	end
+	session[:card_id] = session[:card_id] + 1
+	redirect '/rounds/' + session[:round_id].to_s
 end

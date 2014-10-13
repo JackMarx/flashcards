@@ -10,16 +10,9 @@ post '/users/new' do
 	@user = User.new(params[:user])
 
 	if !@user.save
-		@error = @user.first_error
 		return erb :"users/new"
 	end
 
 	redirect to '/'
-end
-
-get '/users/:id' do
-	@user = User.find_by_id(session[:user_id])
-	@round = Round.new
-	erb :"users/show"
 end
 

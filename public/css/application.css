@@ -32,6 +32,12 @@ th {
   text-align: left;
 }
 
+.loginError {
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  margin-top: -60px;
+}
 
 .hide {
   display:none;

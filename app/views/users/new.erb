@@ -5,9 +5,24 @@
   <h2>Sign Up</h2>
   <div class="form">
     <form action='/users/new' method='POST'>
-    	<input class="formInput" type='text' name='user[name]' placeholder='Name'>
-    	<input class="formInput" type='text' name='user[email]' placeholder='Email'>
-    	<input class="formInput" type='password' name='user[password]' placeholder='Password'>
+    	<input class="formInput <%= display_error(@user, :name) %>" type='text' name='user[name]' placeholder='Name'>
+      <% if error?(@user, :name) %>
+        <% @user.errors[:name].each do |error| %>
+          <p class="signupError">Name <%= error %>.</p>
+        <% end %>
+      <% end %>
+    	<input class="formInput <%= display_error(@user, :email) %>" type='text' name='user[email]' placeholder='Email'>
+      <% if error?(@user, :email) %>
+        <% @user.errors[:email].each do |error| %>
+          <p class="signupError">Email <%= error %>.</p>
+        <% end %>
+      <% end %>
+    	<input class="formInput <%= display_error(@user, :password_hash) %>" type='password' name='user[password]' placeholder='Password'>
+      <% if error?(@user, :password_hash) %>
+        <% @user.errors[:password_hash].each do |error| %>
+          <p class="signupError">Password <%= error %>.</p>
+        <% end %>
+      <% end %>
     	<input class="button" type='submit' value='Sign up'>
     </form>
   </div>
