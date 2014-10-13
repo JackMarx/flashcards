@@ -36,7 +36,8 @@ th {
   text-align: center;
   color: white;
   font-size: 25px;
-  margin-top: 70px;
+  margin-top: -60px;
+  margin-bottom: 70px;
 }
 
 .hide {
