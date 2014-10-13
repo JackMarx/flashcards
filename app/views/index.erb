@@ -1,14 +1,17 @@
 
-<link rel="stylesheet" type="text/css" href="flow.css">
+<link rel="stylesheet" type="text/css" href="/css/form.css">
 
-<header>
-  <h1> Let's Play....The Big Reveal!!!</h1>
-</header>
-<div id="container">
-  <form id="login" action="###login###" method="POST">
-    <input id="username" type="text" name="user[email]" placeholder="Email"><br>
-    <input id="password" type="password" name="user[password]" placeholder="Password">
-    <input class="button" type="submit" value="Login">
+<div class="contentContainer">
+  <h2>Play In The Buff</h2>
+  <% if @message %>
+    <p class="loginError"><%= @message %></p>
+  <% end %>
+  <div class="form">
+    <form action="/login" method="POST">
+      <input class="formInput" type="text" name="user[email]" placeholder="Email"><br>
+      <input class="formInput" type="password" name="user[password]" placeholder="Password">
+      <input class="button" type="submit" value="Login">
+    </form>
     <a href="/users/new"><button class="button">Sign Up</button></a>
-  </form>
+  </div>
 </div>

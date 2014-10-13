@@ -1,11 +1,13 @@
 .statsBar {
   width: 20%;
-  background: #2c3e50;
+  background: #28597a;
   height: 100%;
   position:fixed;
   z-index: 999;
   padding: 10px 30px 10px 30px;
   color: white;
+  top:0;
+  overflow: scroll;
 }
 
 .header {
@@ -15,6 +17,7 @@
 
 .header h2 {
   text-transform: uppercase;
+  margin-top: 40px;
   margin-bottom: 25px;
   font-size:30px;
   color: #3498db;
@@ -34,6 +37,6 @@
   font-size: 18px;
 }
 
-.toStudy {
-  border-bottom: 1px solid white;
+.round {
+  margin-top: 20px;
 }

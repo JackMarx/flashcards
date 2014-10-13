@@ -3,8 +3,7 @@ class CreateRounds < ActiveRecord::Migration
   	create_table :rounds do |t|
   		t.integer :user_id
   		t.integer :deck_id
-  		t.integer :total_guesses, default: 0
-  		t.integer :correct_guesses, default: 0 
+  		t.integer :correct_guesses, default: 0
   		t.boolean :finished, default: false
 
   		t.timestamps

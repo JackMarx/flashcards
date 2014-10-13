@@ -8,3 +8,12 @@ def logged_in?
 	!current_user.nil?
 end
 
+def display_error(object, field)
+  if object.errors[field].any?
+    "error"
+  end
+end
+
+def error?(object, field)
+  object.errors[field].any?
+end

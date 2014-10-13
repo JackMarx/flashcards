@@ -1,5 +1,12 @@
-<h1>Decks</h1>
 
-<% @decks.each do |deck| %>
-	<div class='deck'><a class='btn' href='decks/<%= deck.id %>'><%= deck.name %></a></div>
-<% end %>
+<link rel="stylesheet" type="text/css" href="/css/deck.css">
+
+<div class="contentContainer">
+  <h2>Choose A Deck </h2>
+  <% @decks.each do |deck| %>
+      <form action="/decks" method="post">
+        <input type="hidden" name="deck[id]" value="<% deck.id %>">
+        <input class="deck" type="submit" value="<%= deck.name %>" name="submit">
+      </form>
+  <% end %>
+</div>

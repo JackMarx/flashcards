@@ -1,7 +1,14 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  var $this = $(this),
+    $stats = $('.statsBar'),
+    $viewStats = $('.viewStats');
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $viewStats.on('click', function(){
+    if ($stats.hasClass('hide')) {
+      $stats.removeClass('hide').addClass('show');
+    }
+    else {
+      $stats.removeClass('show').addClass('hide');
+    }
+  });
 });
